@@ -1,0 +1,1 @@
+export { default, type Props as NewLoginProps } from './Login';
