@@ -5,6 +5,7 @@
   "type": "module",
   "homepage": "https://anibalsv.github.io/App/",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "test": "vitest",
