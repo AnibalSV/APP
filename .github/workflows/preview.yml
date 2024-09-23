@@ -36,16 +36,3 @@ jobs:
         run: |
           npm run test:coverage > coverage-summary.txt  # Guarda el reporte en un archivo
           cat coverage-summary.txt                       # Muestra el reporte en la consola
-
-      - name: Deploy to GitHub Pages (Optional, for full report)
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./coverage  # Publica el informe detallado en GitHub Pages
-
-      - name: Add coverage summary comment to PR
-        run: |
-          SUMMARY=$(cat coverage-summary.txt | tail -n 20)  # Extrae las últimas líneas del resumen
-          gh pr comment ${{ github.event.pull_request.number }} --body "$SUMMARY\n\n🧪 [Full coverage report](https://AnibalSV.github.io/App/coverage)"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
