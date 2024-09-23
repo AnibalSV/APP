@@ -6,7 +6,9 @@
   "homepage": "https://anibalsv.github.io/App/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --coverage",
+        "test:e2e": "cypress run",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
